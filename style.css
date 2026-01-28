@@ -46,7 +46,6 @@ nav a:hover {
 
 #home #me {
   margin-top: -10px;
-  border-bottom-left-radius: 5%;
   border-bottom-right-radius: 20%;
 }
 
@@ -161,9 +160,19 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
+  .hero{
+    text-align: left;
     gap: 20px;
+  }
+  #home {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+  }
+  #home img {
+    position: absolute;
+    right: -22px;
+    top: 17.9%;
+    width: 50%;
   }
 }
