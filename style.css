@@ -7,8 +7,31 @@
 }
 
 body {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
   background: radial-gradient(circle at top, #0b0b14, #050508);
   color: #f8f8ff;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./src/75eb058f53774fa8b5c7cce736ce24d9.gif") no-repeat
+    center/cover;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 header {
@@ -46,8 +69,11 @@ nav a:hover {
 }
 
 #home #me {
-  margin-top: -10px;
-  border-bottom-right-radius: 20%;
+  margin-top: -25vh;
+  margin-left: auto;
+  margin-right: -15%;
+  pointer-events: none;
+  width: 85%;
 }
 
 .panel {
@@ -59,12 +85,14 @@ nav a:hover {
   box-shadow: 0 0 25px #ff2b8760;
 }
 
-.panel p, #home p {
+.panel p,
+#home p {
   margin: 20px 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.panel a, #home a {
+.panel a,
+#home a {
   text-decoration: none;
   color: white;
   background-color: #ff2b87;
@@ -161,19 +189,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero{
+  .hero {
     text-align: left;
     gap: 20px;
   }
   #home {
     width: 100%;
     text-align: left;
-    padding: 20px;
-  }
-  #home img {
-    position: absolute;
-    right: -22px;
-    top: 17.9%;
-    width: 50%;
+    padding: 20px 0 0 20px;
   }
 }
